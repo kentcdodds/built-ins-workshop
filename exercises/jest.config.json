@@ -1,6 +1,6 @@
 {
   "testEnvironment": "node",
-  "testPathDirs": [
+  "root": [
     "exercises"
   ]
 }

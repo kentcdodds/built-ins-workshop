@@ -24,7 +24,7 @@ function listenForInput() {
   process.stdin.on('data', text => {
     /* eslint complexity:0 */
     const input = text.trim()
-    
+
     switch (input) {
       case 'clear':
       case 'c':
@@ -58,7 +58,7 @@ function rerunFile(relativePath) {
 
   try {
     delete require.cache[fullPath]
-    require(fullPath) // eslint-disable-line global-require
+    require(fullPath); // eslint-disable-line
   } catch (e) {
     console.error(chalk.red(getRelevantStackTrace(e)))
   }
@@ -73,11 +73,15 @@ function sayWatching() {
 }
 
 function sayCommands() {
-  console.log(chalk.gray(`You can enter a few handy commands here:
+  console.log(
+    chalk.gray(
+      `You can enter a few handy commands here:
     q, quit     Quit the quizzes
     c, clear    Clear the console
     filename    Run the first file that matches your pattern
-    <enter>     Re-run the last run file\n`))
+    <enter>     Re-run the last run file\n`,
+    ),
+  )
 }
 
 function getRelevantStackTrace({stack}) {

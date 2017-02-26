@@ -1,4 +1,7 @@
+test('I submitted my elaboration and feedback', () => {
   const submitted = true
+  expect(true).toBe(submitted)
+})
 
 //////// EXTRA CREDIT ////////
 

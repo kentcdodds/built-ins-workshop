@@ -3,15 +3,17 @@
 /*
 http://ws.kcd.im/?ws=Built-ins&e=Primatives&em=
 */
+// WORKSHOP_END
 test('I submitted my elaboration and feedback', () => {
+  // WORKSHOP_START
   const submitted = false // change this when you've submitted!
   // WORKSHOP_END
   // FINAL_START
   const submitted = true
   // FINAL_END
-  // WORKSHOP_START
   expect(true).toBe(submitted)
 })
+// WORKSHOP_START
 ////////////////////////////////
 // WORKSHOP_END
 
