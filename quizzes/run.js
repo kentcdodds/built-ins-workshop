@@ -2,6 +2,7 @@
 import path from 'path'
 import chokidar from 'chokidar'
 import chalk from 'chalk'
+import {oneLine} from 'common-tags'
 import {sync as globSync} from 'glob'
 
 let lastFileRun = null
@@ -14,9 +15,11 @@ sayCommands()
 listenForInput()
 
 function watchFiles() {
-  return chokidar.watch('*_*.js', {cwd, ignoreInitial: true}).on('change', relativePath => {
-    rerunFile(relativePath)
-  })
+  return chokidar
+    .watch('*_*.js', {cwd, ignoreInitial: true})
+    .on('change', relativePath => {
+      rerunFile(relativePath)
+    })
 }
 
 function listenForInput() {
@@ -40,7 +43,14 @@ function listenForInput() {
         if (lastFileRun) {
           rerunFile(lastFileRun)
         } else {
-          console.log(chalk.gray('No quiz file has been run yet. Enter a glob pattern or change a file first.'))
+          console.log(
+            chalk.gray(
+              oneLine`
+                No quiz file has been run yet.
+                Enter a glob pattern or change a file first.
+              `,
+            ),
+          )
         }
         break
       default:
@@ -86,7 +96,8 @@ function sayCommands() {
 
 function getRelevantStackTrace({stack}) {
   const splitStack = stack.split('\n')
-  const newStack = [splitStack[0]] // skip the first line which is the error message
+  // skip the first line which is the error message
+  const newStack = [splitStack[0]]
   for (let i = 1; i < splitStack.length; i++) {
     const line = splitStack[i]
     if (line.includes(cwd)) {
