@@ -1,6 +1,6 @@
 {
   "testEnvironment": "node",
-  "root": [
+  "roots": [
     "exercises-final"
   ]
 }

@@ -1,12 +1,20 @@
+// WORKSHOP_START
 //////// Elaboration & Feedback /////////
 /*
-http://ws.kcd.im/?ws=Built-ins&e=Primatives&em=
+http://ws.kcd.im/?ws=Built-ins&e=Strings&em=
 */
 test('I submitted my elaboration and feedback', () => {
   const submitted = false // change this when you've submitted!
   expect(true).toBe(submitted)
 })
 ////////////////////////////////
+// WORKSHOP_END
+// FINAL_START
+test('I submitted my elaboration and feedback', () => {
+  const submitted = true
+  expect(true).toBe(submitted)
+})
+// FINAL_END
 
 //////// EXTRA CREDIT ////////
 

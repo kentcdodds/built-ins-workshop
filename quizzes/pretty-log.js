@@ -23,9 +23,12 @@ function formatLog(...objs) {
   if (!objs.length) {
     return
   }
-  const formattedObjs = objs.reduce((newArray, obj) => {
-    newArray.push(prettyFormat(obj), '\n')
-    return newArray
-  }, [])
+  const formattedObjs = objs.reduce(
+    (newArray, obj) => {
+      newArray.push(prettyFormat(obj), '\n')
+      return newArray
+    },
+    [],
+  )
   console.log(...formattedObjs)
 }

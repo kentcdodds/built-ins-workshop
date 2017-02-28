@@ -1,6 +1,6 @@
 {
   "testEnvironment": "node",
-  "root": [
+  "roots": [
     // COMMENT_START
     NOTE: This is not valid JSON. That is intended
     this file should never be parsed directly. It's simply a template.

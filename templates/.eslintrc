@@ -4,7 +4,7 @@
 {
   "rules": {
     // COMMENT_START
-    "no-redeclare": 0,
+    "jest/no-identical-title": "off"
     // COMMENT_END
   }
 }
